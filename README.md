@@ -19,7 +19,7 @@ The English Learning Crossword Puzzle Game is a fun and educational game designe
 
 ## Where to Play
 
-Play the game online by accessing the [GitHub page](https://github.com/username/repo).
+Play the game online by accessing the [GitHub page](https://azalyarahmatika.github.io/crossword-puzzle-game/).
 
 ## System Requirements
 
