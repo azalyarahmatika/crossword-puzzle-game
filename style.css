@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-width: 1200px;
+  max-width: 1200px;
+  margin: auto;
+  height: 100vh;
+}
+
+.left {
+  flex-basis: 50%;
+  padding-top: 18px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(13, 30px);
+  margin: auto;
+  width:fit-content;
+  position: relative;
+}
+
+.box {
+  height: 30px;
+  font-size: 10px;
+  padding: 2px;
+  position: relative;
+}
+
+.answer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.highlight {
+  background: #1F4172;
+  border: 1px solid black; 
+  border-radius: 5px;
+}
+
+.right {
+  padding: 0px 80px 0 0;
+
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.clues {
+  display: flex;
+  gap: 50px;
+}
+
+.individualClue {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.num, .desc {
+  font-size: 18px;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+img {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  height: 200px;
+  z-index: -1;
+}
+
+h1, h2 {
+  color: #E9B824;
+}
