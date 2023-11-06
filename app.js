@@ -34,16 +34,59 @@ for(let i=1; i<=234; i++) {
   const box = document.createElement('div');
   box.className = 'box';
   box.textContent = num[i] || "";
+
   container.appendChild(box);
 
   if (ans.includes(i)) {
-    box.classList.add('highlight'); 
-    box.setAttribute('contenteditable', 'true');
-  }
+    box.classList.add('highlight');
+    
+    const letter = document.createElement('input');
+    letter.setAttribute('maxLength', '1');
+    letter.setAttribute('id', i);
+    letter.className = "answer";
+    
+    letter.addEventListener('keydown', function (event) {
+      const currentId = parseInt(letter.id);
 
-  const paragraph = document.createElement('p');
-  paragraph.className = "answer";
-  box.appendChild(paragraph);
+      if (event.key === 'ArrowRight') {
+        const nextId = currentId + 1;
+        const nextFocus = document.getElementById(String(nextId));
+
+        if(nextFocus) {
+          nextFocus.focus();
+        }
+      }
+      
+      if (event.key === 'ArrowLeft') {
+        const prevId = currentId - 1;
+        const prevFocus = document.getElementById(String(prevId));
+        
+        if(prevFocus) {
+          prevFocus.focus();
+        }
+      }
+      
+      if (event.key === 'ArrowUp') {
+        const upperId = currentId - 13;
+        const upperFocus = document.getElementById(String(upperId));
+        
+        if(upperFocus) {
+          upperFocus.focus();
+        }
+      }
+
+      if (event.key === 'ArrowDown') {
+        const downId = currentId + 13;
+        const downFocus = document.getElementById(String(downId));
+
+        if(downFocus) {
+          downFocus.focus();
+        }
+      }
+    });
+    
+    box.appendChild(letter);
+  }
 }
 
 for(let i in clues) {
@@ -56,7 +99,7 @@ for(let i in clues) {
     numClue.classList.add('num');
     clueDesc.classList.add('desc');
   
-    numClue.textContent = key;
+    numClue.textContent = `${key}.`;
     clueDesc.textContent = clues[i][key];
     clue.classList.add('individualClue');
     clue.appendChild(numClue);
@@ -67,6 +110,5 @@ for(let i in clues) {
     } else {
       down.appendChild(clue);
     }
-    
   }
 }
